@@ -10,4 +10,4 @@ This will communcatie to turn on a LED.
 
 ## License
 "THE BEER-WARE LICENSE" (Revision 42):
-The design document is based on the project of the 6th period. The project is called Bedraadlozen and is made by four students of Avans University of Applied Science. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in retrun. Team Bedraadlozen.
+The design document is based on the project of the 6th period. The project is called Bedraadlozen and is made by four students of Avans University of Applied Science. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return. Team Bedraadlozen.
