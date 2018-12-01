@@ -8,8 +8,8 @@ The integrated will create a new branch with the code form the task and the mast
 
 
 ### The tags:
-Build, if the software is successfully build.
-Tested, the unit test are done.
-Integrated, all integration test are done.
-Alfa, Beta tested.
-Released, the product is ready for production.
+Build, if the software is successfully build.<br/>
+Tested, the unit test are done.<br/>
+Integrated, all integration test are done.<br/>
+Alfa, Beta tested.<br/>
+Released, the product is ready for production.<br/>
