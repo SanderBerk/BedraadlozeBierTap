@@ -1,6 +1,6 @@
 # Bedraadlozen
 
-Bedraadlozen is a school project where a mesh network will be setup up for a domotica system. 
+Bedraadlozen is a school project where a mesh network will be set up for a domotica system. 
 The system is designed with a QT application on a Raspberry PI and XBee modules.
 This will communcatie to turn on a LED.
 
