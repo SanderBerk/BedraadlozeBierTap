@@ -7,7 +7,7 @@ All project task get there own branch to work on. The branch in a clone of the m
 The integrated will create a new branch with the code form the task and the master reposatorie. Where all the tests are successful the branch can be merch with the master branch. 
 
 
-# The tags:
+### The tags:
 Build, if the software is successfully build.
 Tested, the unit test are done.
 Integrated, all integration test are done.
