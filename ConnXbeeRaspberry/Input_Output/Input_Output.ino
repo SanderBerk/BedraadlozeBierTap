@@ -20,10 +20,10 @@ void loop()
   {
     char c = XBee.read();
     //Serial.println(c, BIN);
-    if (c == 'c' && LEDON  == 0)
+    if (c == 'b' && LEDON  == 0)
     {
       LEDON = 1;
-    } else if (c == 'c' && LEDON == 1) {
+    } else if (c == 'b' && LEDON == 1) {
       LEDON = 0;
     }
 
@@ -37,7 +37,7 @@ void loop()
       digitalWrite(13, LOW);
     }
   }
-
+ 
   if (Serial.available())
   {
     char c = Serial.read();
@@ -51,7 +51,7 @@ void loop()
     while (digitalRead(BUTTON) == HIGH) {
 
     }
-    XBee.write('a');
+    XBee.write('c');
     digitalWrite(13, HIGH);
     delay(50);
 
