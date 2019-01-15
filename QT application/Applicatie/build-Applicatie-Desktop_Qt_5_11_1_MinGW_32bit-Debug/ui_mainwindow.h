@@ -43,7 +43,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         btnLed2 = new QPushButton(centralWidget);
         btnLed2->setObjectName(QStringLiteral("btnLed2"));
-        btnLed2->setGeometry(QRect(10, 70, 75, 23));
+        btnLed2->setGeometry(QRect(90, 40, 75, 23));
         cmbComPorten = new QComboBox(centralWidget);
         cmbComPorten->setObjectName(QStringLiteral("cmbComPorten"));
         cmbComPorten->setGeometry(QRect(10, 10, 91, 22));
@@ -52,7 +52,7 @@ public:
         btnConnect->setGeometry(QRect(110, 10, 75, 23));
         btnLed3 = new QPushButton(centralWidget);
         btnLed3->setObjectName(QStringLiteral("btnLed3"));
-        btnLed3->setGeometry(QRect(10, 100, 75, 23));
+        btnLed3->setGeometry(QRect(170, 40, 75, 23));
         btnLed1 = new QPushButton(centralWidget);
         btnLed1->setObjectName(QStringLiteral("btnLed1"));
         btnLed1->setGeometry(QRect(10, 40, 75, 23));
