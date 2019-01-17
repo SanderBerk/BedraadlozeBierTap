@@ -2,15 +2,17 @@
  * @file Main.h
  * @date January, 2019
  * @brief
- * ! \mainpage Arduino/Xbee Serial connector
+ * ! \mainpage Arduino Nano Led/Button Controller (XBee)
  *
- * QT Gui for connecting to an Arduino/Xbee mesh network through Serial and controlling LED's.
+ * This program will use the broadcasted messages received from the XBee to turn on a LED.
+ * Also when the connected button is pressed it will send a message to the other nodes using the attached XBee.
+ * 
  *
  *
  *
  * This project was made by second year students from Avans Hogeschool Den Bosch Technische Informatica.
  *
- * \note https://wiki.qt.io/Main
+ * 
  *
  */
 
