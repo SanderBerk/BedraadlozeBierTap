@@ -46,7 +46,7 @@ void MainWindow::on_btnConnect_clicked()
 
 void MainWindow::on_btnLed1_clicked()
 {
-    serial->write("\xfd");
+    serial->write("\xff");
 }
 
 void MainWindow::on_btnLed2_clicked()
@@ -56,5 +56,5 @@ void MainWindow::on_btnLed2_clicked()
 
 void MainWindow::on_btnLed3_clicked()
 {
-    serial->write("\xff");
+    serial->write("\xfd");
 }
