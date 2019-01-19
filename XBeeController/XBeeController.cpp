@@ -2,23 +2,22 @@
  * @file Main.h
  * @date January, 2019
  * @brief
- * ! \mainpage Arduino/Xbee Serial connector
+ * ! \mainpage Arduino Nano Led/Button Controller (XBee)
  *
- * QT Gui for connecting to an Arduino/Xbee mesh network through Serial and controlling LED's.
+ * This program will use the broadcasted messages received from the XBee to turn on a LED.
+ * Also when the connected button is pressed it will send a message to the other nodes using the attached XBee.
+ * 
  *
  *
  *
  * This project was made by second year students from Avans Hogeschool Den Bosch Technische Informatica.
  *
- * \note https://wiki.qt.io/Main
+ * 
  *
  */
 
 /* Output-side (LED) Arduino code */
 #include "SoftwareSerial.h"
-
-#define module 1
-#define sendmodule 2
 
 // RX: Arduino pin 2, XBee pin DOUT.  TX:  Arduino pin 3, XBee pin DIN
 SoftwareSerial XBee(3, 2);
@@ -27,13 +26,6 @@ SoftwareSerial XBee(3, 2);
 #define LED 4
 
 int LEDON = 0;
-
-int tableLength = 3;
-int table[][2] = {
-  {1, 255},
-  {2, 254},
-  {3, 253}
-};
 
 void setup()
 {
@@ -47,22 +39,20 @@ void XBeeReceive() {
   if (XBee.available())
   {
     char c = XBee.read();
-    if (c == module)
+    if (c == 'c' && LEDON  == 0)
     {
-      toglleLed();
-    } 
-  }
-}
+      LEDON = 1;
+    } else if (c == 'c' && LEDON == 1) {
+      LEDON = 0;
+    }
 
-void toglleLed(){
-  if (LEDON  == 0){
-    LEDON = 1;
-    digitalWrite(LED, HIGH);
-    delay(50);
-  } else if (LEDON == 1) {
-    LEDON = 0;
-    digitalWrite(LED, LOW);
-    delay(50);
+    if (LEDON == 1) {
+
+      digitalWrite(LED, HIGH);
+      delay(50);
+    } else if (LEDON == 0) {
+      digitalWrite(LED, LOW);
+    }
   }
 }
 
@@ -72,7 +62,7 @@ void XBeeSend() {
   {
     // beter maken
     while (digitalRead(BUTTON) == HIGH) { }
-    XBee.write(sendmodule);
+    XBee.write('a');
     digitalWrite(13, HIGH);
     delay(50);
 
@@ -87,14 +77,14 @@ void SerialReceive() {
   if (Serial.available())
   {
     byte c = Serial.read();
-    for(int x = 0; x < tableLength; x++){
-      if(table[x][1] == int(c)){
-        if(table[x][0] == module){
-          toglleLed();
-        }else{
-          XBee.write(table[x][0]);
-        }
-      }
+    if (int(c) == 255) {
+      XBee.write("c");
+    }
+    if (int(c) == 254) {
+      XBee.write("b");
+    }
+    if (int(c) == 253) {
+      XBee.write("a");
     }
   }
 }
