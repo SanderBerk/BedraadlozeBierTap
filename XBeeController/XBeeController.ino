@@ -49,12 +49,12 @@ void XBeeReceive() {
     char c = XBee.read();
     if (c == module)
     {
-      toglleLed();
+      toggleLed();
     } 
   }
 }
 
-void toglleLed(){
+void toggleLed(){
   if (LEDON  == 0){
     LEDON = 1;
     digitalWrite(LED, HIGH);
