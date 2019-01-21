@@ -17,8 +17,8 @@
 /* Output-side (LED) Arduino code */
 #include "SoftwareSerial.h"
 
-#define module 1
-#define sendmodule 2
+#define module 2
+#define sendmodule 3
 
 // RX: Arduino pin 2, XBee pin DOUT.  TX:  Arduino pin 3, XBee pin DIN
 SoftwareSerial XBee(3, 2);
@@ -90,7 +90,7 @@ void SerialReceive() {
     for(int x = 0; x < tableLength; x++){
       if(table[x][1] == int(c)){
         if(table[x][0] == module){
-          toglleLed();
+          toggleLed();
         }else{
           XBee.write(table[x][0]);
         }

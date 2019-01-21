@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -30,6 +31,7 @@ public:
     QPushButton *btnConnect;
     QPushButton *btnLed3;
     QPushButton *btnLed1;
+    QLabel *label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -38,7 +40,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(576, 440);
+        MainWindow->resize(545, 314);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         btnLed2 = new QPushButton(centralWidget);
@@ -56,10 +58,13 @@ public:
         btnLed1 = new QPushButton(centralWidget);
         btnLed1->setObjectName(QStringLiteral("btnLed1"));
         btnLed1->setGeometry(QRect(10, 40, 75, 23));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(260, 10, 281, 251));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 576, 21));
+        menuBar->setGeometry(QRect(0, 0, 545, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -80,6 +85,7 @@ public:
         btnConnect->setText(QApplication::translate("MainWindow", "Connect", nullptr));
         btnLed3->setText(QApplication::translate("MainWindow", "Led 3", nullptr));
         btnLed1->setText(QApplication::translate("MainWindow", "Led 1", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };
